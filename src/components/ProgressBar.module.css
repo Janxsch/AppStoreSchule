@@ -1,0 +1,35 @@
+.wrap {
+  margin-bottom: 20px;
+}
+
+.label {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-progress-bg);
+  border: 3px solid var(--color-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+}
+
+.dot.done {
+  background: var(--color-progress);
+  border-color: var(--color-progress);
+}
