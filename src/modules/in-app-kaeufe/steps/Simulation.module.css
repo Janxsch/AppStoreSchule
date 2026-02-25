@@ -1,0 +1,82 @@
+.wrap {
+  padding: 20px 0;
+}
+
+.context {
+  font-size: 1.1rem;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.banner {
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(145deg, #fecaca 0%, #fca5a5 100%);
+  border: 3px solid #ef4444;
+  border-radius: var(--radius-button);
+  font-weight: 800;
+  color: #991b1b;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  padding: 16px 24px;
+  border-radius: var(--radius-button);
+  background: linear-gradient(145deg, #e5e7eb 0%, #d1d5db 100%);
+  border: 3px solid #9ca3af;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.option:hover {
+  filter: brightness(0.98);
+}
+
+.optionBuy {
+  padding: 16px 24px;
+  border-radius: var(--radius-button);
+  background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%);
+  border: 3px solid #f59e0b;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.optionBuy:hover {
+  filter: brightness(1.02);
+}
+
+.feedback {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.neutral {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  border-radius: var(--radius-button);
+  background: var(--color-header);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.button:hover {
+  filter: brightness(1.1);
+}

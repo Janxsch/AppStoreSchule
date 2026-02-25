@@ -1,17 +1,37 @@
-# macOS
+# macOS / temporäre Systemdateien
 .DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
 
 # Temporäre Dateien
 *.zip
 *.tmp
 *~
-Thumbs.db
 
-# Optional: sehr große Mediendateien auslassen (auskommentieren wenn du alles pushen willst)
-# *.pdf
-# *.m4a
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Ordner Seminar ignorieren
 Seminar/

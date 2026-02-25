@@ -1,0 +1,52 @@
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.text {
+  margin: 0 0 8px;
+  color: var(--color-text-muted);
+}
+
+.badgeName {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.complete {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 14px 24px;
+  border-radius: var(--radius-button);
+  background: var(--color-progress);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.complete:hover {
+  filter: brightness(1.08);
+}
+
+.back {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius-button);
+  background: var(--color-header);
+  color: white;
+  font-weight: 700;
+}
+
+.back:hover {
+  filter: brightness(1.1);
+}
