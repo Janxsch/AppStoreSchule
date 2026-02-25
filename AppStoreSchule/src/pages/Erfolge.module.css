@@ -1,0 +1,48 @@
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.badgeList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(145deg, #fef9e7 0%, #fef3c7 100%);
+  border: 3px solid var(--color-card-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.badgeIcon {
+  font-size: 2rem;
+}
+
+.badgeName {
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.badgeModule {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporäre Dateien
+*.zip
+*.tmp
+*~
+Thumbs.db
+
+# Optional: sehr große Mediendateien auslassen (auskommentieren wenn du alles pushen willst)
+# *.pdf
+# *.m4a
+
+# Ordner Seminar ignorieren
+Seminar/
