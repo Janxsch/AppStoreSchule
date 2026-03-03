@@ -12,24 +12,40 @@ const QUESTIONS: { question: string; options: string[]; correctIndex: number }[]
     correctIndex: 1,
   },
   {
-    question: 'Was sind In-App-Käufe? (Platzhalter)',
-    options: ['A', 'B', 'C'],
+    question: 'Was sind In-App-Käufe?',
+    options: [
+      'Ingame Käufe durch echtes Geld.',
+      'Ingame Käufe durch erspieltes Geld.',
+      'Belohnungen durch Quests.',
+    ],
     correctIndex: 0,
   },
   {
-    question: 'Woran erkennt man Kaufdruck? (Platzhalter)',
-    options: ['A', 'B', 'C'],
+    question: 'Woran erkennt man Kaufdruck?',
+    options: [
+      'Wenn das Spiel die Option bietet einen Skin zu kaufen, der immer im Shop ist.',
+      'Wenn das Spiel durch künstliche Verknappung (Zeit, Limitiert, etc.) zum Kauf animiert.',
+      'Wenn das Spiel die Kaufoptionen versteckt.',
+    ],
     correctIndex: 1,
   },
   {
-    question: 'Was ist eine Lootbox? (Platzhalter)',
-    options: ['A', 'B', 'C'],
+    question: 'Was ist eine Lootbox?',
+    options: [
+      'Eine Belohnung, bei der man vorher nicht weiß, was man bekommt. Oft auch in Seltenheiten unterteilt.',
+      'Ein Kauf bei dem man zusätzliche EP bekommt.',
+      'Ein Spielmodus, bei dem man eine zufällige Challenge erfüllen muss.',
+    ],
     correctIndex: 0,
   },
   {
-    question: 'Warum nutzen Spiele Countdown-Timer? (Platzhalter)',
-    options: ['A', 'B', 'C'],
-    correctIndex: 1,
+    question: 'Warum nutzen Spiele Countdown-Timer?',
+    options: [
+      'Um mehr Spaß und Spannung zu erzeugen.',
+      'Damit die Server das besser verarbeiten können.',
+      'Um Druck auf die Spielenden zu erzeugen.',
+    ],
+    correctIndex: 2,
   },
 ]
 
