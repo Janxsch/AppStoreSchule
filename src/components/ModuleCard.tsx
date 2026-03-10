@@ -21,6 +21,14 @@ export default function ModuleCard({ id, title, index }: Props) {
     }
   }
 
+  const themeClasses = [
+    styles.theme1,
+    styles.theme2,
+    styles.theme3,
+    styles.theme4,
+  ]
+  const themeClass = themeClasses[index % themeClasses.length]
+
   const content = (
     <>
       <span className={styles.number}>{index + 1}</span>
@@ -32,7 +40,7 @@ export default function ModuleCard({ id, title, index }: Props) {
 
   if (locked) {
     return (
-      <div className={`${styles.card} ${styles.lockedCard}`} aria-disabled>
+      <div className={`${styles.card} ${themeClass} ${styles.lockedCard}`} aria-disabled>
         {content}
       </div>
     )
@@ -41,7 +49,7 @@ export default function ModuleCard({ id, title, index }: Props) {
   return (
     <Link
       to={`/module/${id}`}
-      className={`${styles.card} ${completed ? styles.completed : ''}`}
+      className={`${styles.card} ${themeClass} ${completed ? styles.completed : ''}`}
       onClick={handleClick}
     >
       {content}

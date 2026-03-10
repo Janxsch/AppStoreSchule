@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main style={{ flex: 1, padding: '16px', paddingBottom: 24 }}>
+      <main style={{ flex: 1, padding: '16px', paddingBottom: 96, position: 'relative' }}>
         <Outlet />
       </main>
       <BottomNav />

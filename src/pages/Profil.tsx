@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useProgress } from '../store/ProgressContext'
 import { TOTAL_MODULES } from '../data/modules'
+import Mascot from '../components/Mascot'
 import styles from './Profil.module.css'
 
 export default function Profil() {
@@ -43,6 +44,13 @@ export default function Profil() {
           </ul>
         </section>
       )}
+      <Mascot
+        mode="neutral"
+        messages={[
+          `Du bist aktuell "${rank}". Jedes abgeschlossene Modul verbessert dein Zertifikat.`,
+          'Nutze dein Profil, um deinen Lernfortschritt im Blick zu behalten.',
+        ]}
+      />
     </div>
   )
 }

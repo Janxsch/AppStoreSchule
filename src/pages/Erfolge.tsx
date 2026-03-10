@@ -1,10 +1,12 @@
 import { MODULES } from '../data/modules'
 import { useProgress } from '../store/ProgressContext'
+import Mascot from '../components/Mascot'
 import styles from './Erfolge.module.css'
 
 export default function Erfolge() {
   const { completedModuleIds } = useProgress()
   const completed = MODULES.filter((m) => completedModuleIds.includes(m.id))
+  const hasBadges = completed.length > 0
 
   return (
     <div className={styles.page}>
@@ -23,6 +25,20 @@ export default function Erfolge() {
           </div>
         ))}
       </div>
+      <Mascot
+        mode={hasBadges ? 'celebrate' : 'info'}
+        messages={
+          hasBadges
+            ? [
+                'Stark! Du hast schon Badges gesammelt. Such dir das nächste Modul aus, um noch mehr freizuschalten.',
+                'Schau dir an, welche Themen du schon gut kannst – und wo du noch üben willst.',
+              ]
+            : [
+                'Noch keine Badges – kein Problem. Starte einfach mit dem ersten Modul auf der Startseite.',
+                'Jedes abgeschlossene Modul schaltet ein neues Badge frei.',
+              ]
+        }
+      />
     </div>
   )
 }
