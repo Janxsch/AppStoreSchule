@@ -36,14 +36,6 @@ export default function ModulePage() {
     return (
       <div className={styles.wrap}>
         <InAppKaeufeModule moduleId={id} title={module.title} badge={module.badge} />
-        <Mascot
-          mode="info"
-          messages={[
-            'Lies dir die Situationen in Ruhe durch und triff deine Entscheidungen – es gibt kein richtig oder falsch, sondern Erfahrungen.',
-            'Achte darauf, wie oft du in der Simulation Geld ausgibst – das hilft dir bei der Auswertung.',
-            'Beim Quiz kannst du zeigen, wie gut du die Kauf-Tricks erkannt hast.',
-          ]}
-        />
       </div>
     )
   }

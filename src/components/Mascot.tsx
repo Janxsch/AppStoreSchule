@@ -33,10 +33,10 @@ export default function Mascot({
   }, [allMessages.length])
 
   useEffect(() => {
-    if (!allMessages.length) return
+    if (!allMessages.length || !open) return
     const id = window.setTimeout(() => setOpen(false), autoHideMs)
     return () => window.clearTimeout(id)
-  }, [allMessages.length, autoHideMs])
+  }, [allMessages.length, autoHideMs, open, index])
 
   const currentMessage = allMessages[index] ?? ''
 
@@ -47,24 +47,37 @@ export default function Mascot({
         ? 'Tipp'
         : 'Begleiter'
 
+  const ariaLabel =
+    mode === 'celebrate'
+      ? 'Maskottchen gratuliert dir'
+      : mode === 'info'
+        ? 'Maskottchen gibt dir einen Tipp'
+        : 'Maskottchen begleitet dich durch die Aufgabe'
+
   const handleClick = () => {
     if (!allMessages.length) {
       setOpen((prev) => !prev)
       return
     }
-    // Wenn zu, beim Klick wieder öffnen
-    if (!open) {
-      setOpen(true)
+    // Wenn offen: komplett schließen
+    if (open) {
+      setOpen(false)
       return
     }
-    // Sonst zur nächsten Nachricht springen
-    setIndex((prev) => (prev + 1) % allMessages.length)
+    // Wenn zu: erste Nachricht wieder öffnen
+    setIndex(0)
+    setOpen(true)
+  }
+
+  // Wenn geschlossen oder keine Nachricht: gar nichts anzeigen
+  if (!open || !currentMessage) {
+    return null
   }
 
   return (
     <aside
-      className={styles.container}
-      aria-label="Maskottchen und Hinweis"
+      className={`${styles.container} ${styles[mode]}`}
+      aria-label={ariaLabel}
       onClick={handleClick}
     >
       <div className={styles.avatarWrap}>
@@ -82,12 +95,21 @@ export default function Mascot({
           🤖
         </div>
       </div>
-      {open && currentMessage && (
-        <div className={`${styles.speech} ${styles[mode]}`}>
-          <p className={styles.label}>{label}</p>
-          <p className={styles.message}>{currentMessage}</p>
-        </div>
-      )}
+      <div className={`${styles.speech} ${styles[mode]}`}>
+        <button
+          type="button"
+          className={styles.closeButton}
+          aria-label="Hinweis schließen"
+          onClick={(e) => {
+            e.stopPropagation()
+            setOpen(false)
+          }}
+        >
+          ×
+        </button>
+        <p className={styles.label}>{label}</p>
+        <p className={styles.message}>{currentMessage}</p>
+      </div>
     </aside>
   )
 }

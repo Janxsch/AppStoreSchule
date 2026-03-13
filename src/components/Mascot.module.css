@@ -1,14 +1,21 @@
 .container {
   position: fixed;
-  top: 100px;
   right: 16px;
+  bottom: 96px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   gap: 0.6rem;
-  max-width: 280px;
+  max-width: 240px;
   pointer-events: auto;
   z-index: 10;
+  cursor: pointer;
+  transition: transform 160ms ease-out, filter 160ms ease-out;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.16));
 }
 
 .avatarWrap {
@@ -22,6 +29,16 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+}
+
+.avatarWrap::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  pointer-events: none;
 }
 
 .robotImg {
@@ -39,6 +56,18 @@
   font-size: 1.75rem;
 }
 
+.neutral .avatarWrap::after {
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.info .avatarWrap::after {
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.celebrate .avatarWrap::after {
+  border-color: rgba(34, 197, 94, 0.65);
+}
+
 .speech {
   position: relative;
   pointer-events: auto;
@@ -52,6 +81,27 @@
   line-height: 1.4;
   transform-origin: right center;
   animation: mascot-pop-in 200ms ease-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(148, 163, 184, 0.15);
+  color: #475569;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.closeButton:hover {
+  background: rgba(148, 163, 184, 0.3);
 }
 
 .speech::after {
@@ -91,6 +141,20 @@
   color: var(--color-success);
 }
 
+.celebrate .speech {
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.28);
+  animation: mascot-pop-in 200ms ease-out, mascot-celebrate-bounce 1000ms
+      ease-out 1 120ms;
+}
+
+.info .speech {
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.neutral .speech {
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
 @keyframes mascot-pop-in {
   from {
     opacity: 0;
@@ -98,6 +162,24 @@
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mascot-celebrate-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-6px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  100% {
     transform: translateY(0);
   }
 }

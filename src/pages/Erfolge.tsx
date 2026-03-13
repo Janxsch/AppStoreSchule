@@ -16,15 +16,25 @@ export default function Erfolge() {
           ? 'Noch keine Badges. Schließe Module ab!'
           : `Du hast ${completed.length} Badge${completed.length === 1 ? '' : 's'} verdient.`}
       </p>
-      <div className={styles.badgeList}>
-        {completed.map((m) => (
-          <div key={m.id} className={styles.badge}>
-            <span className={styles.badgeIcon}>🏆</span>
-            <span className={styles.badgeName}>{m.badge}</span>
-            <span className={styles.badgeModule}>{m.title}</span>
-          </div>
-        ))}
-      </div>
+      {hasBadges ? (
+        <div className={styles.badgeList}>
+          {completed.map((m) => (
+            <div key={m.id} className={styles.badge}>
+              <span className={styles.badgeIcon}>🏆</span>
+              <span className={styles.badgeName}>{m.badge}</span>
+              <span className={styles.badgeModule}>{m.title}</span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className={styles.emptyCard}>
+          <p className={styles.emptyTitle}>Noch keine Badges</p>
+          <p className={styles.emptyText}>
+            Starte mit dem ersten Modul auf der Startseite. Für jedes abgeschlossene Modul gibt es
+            ein neues Badge.
+          </p>
+        </div>
+      )}
       <Mascot
         mode={hasBadges ? 'celebrate' : 'info'}
         messages={

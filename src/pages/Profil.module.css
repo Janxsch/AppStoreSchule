@@ -9,6 +9,42 @@
   color: var(--color-text);
 }
 
+.subtitle {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.statTile {
+  flex: 1 1 48%;
+  min-width: 150px;
+  padding: 12px 14px;
+  border-radius: var(--radius-card);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-soft);
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 .zertifikatButton {
   display: block;
   width: 100%;
@@ -87,5 +123,11 @@
 
 .answerItem span {
   font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.noAnswers {
+  margin: 16px 0;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
 }

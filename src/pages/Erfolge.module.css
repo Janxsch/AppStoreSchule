@@ -46,3 +46,22 @@
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
+
+.emptyCard {
+  padding: 18px 16px;
+  border-radius: var(--radius-card);
+  background: #f9fafb;
+  border: 1px dashed #e5e7eb;
+}
+
+.emptyTitle {
+  margin: 0 0 6px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}

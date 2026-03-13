@@ -12,6 +12,23 @@ export default function Profil() {
     <div className={styles.page}>
       <h1 className={styles.title}>Profil</h1>
 
+      <p className={styles.subtitle}>
+        Hier siehst du, wie weit du in der App Store Schule bist.
+      </p>
+
+      <div className={styles.stats}>
+        <div className={styles.statTile}>
+          <span className={styles.statLabel}>Abgeschlossene Module</span>
+          <span className={styles.statValue}>
+            {completedCount} / {TOTAL_MODULES}
+          </span>
+        </div>
+        <div className={styles.statTile}>
+          <span className={styles.statLabel}>Dein Rang</span>
+          <span className={styles.statValue}>{rank}</span>
+        </div>
+      </div>
+
       <button
         type="button"
         className={styles.zertifikatButton}
@@ -30,7 +47,7 @@ export default function Profil() {
         </div>
       )}
 
-      {reflectionAnswers.length > 0 && (
+      {reflectionAnswers.length > 0 ? (
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Gespeicherte Reflexionsantworten</h2>
           <p className={styles.hint}>Diese können später ausgewertet werden.</p>
@@ -43,6 +60,10 @@ export default function Profil() {
             ))}
           </ul>
         </section>
+      ) : (
+        <p className={styles.noAnswers}>
+          Hier werden später deine Antworten aus den Modulen angezeigt.
+        </p>
       )}
       <Mascot
         mode="neutral"

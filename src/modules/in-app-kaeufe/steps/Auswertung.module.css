@@ -1,25 +1,28 @@
 .wrap {
-  padding: 0;
-  background: var(--color-white);
-  border-radius: 24px;
-  box-shadow: var(--shadow-card);
-  padding: 20px 20px 22px;
+  padding: 24px 22px 26px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #2563eb 0%, #4f46e5 45%, #22c55e 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+  color: #e5e7eb;
 }
 
 .title {
   margin: 0 0 16px;
   font-size: 1.25rem;
-  color: var(--color-text);
+  color: #f9fafb;
+  text-align: center;
 }
 
 .report {
   margin: 0 0 20px;
   font-size: 1.05rem;
+  text-align: center;
 }
 
 .question {
   margin: 0 0 12px;
   font-weight: 700;
+  text-align: center;
 }
 
 .options {
@@ -33,10 +36,11 @@
   padding: 14px 20px;
   text-align: left;
   border-radius: var(--radius-button);
-  background: #f3f4f6;
-  border: 3px solid #e5e7eb;
+  background: #f9fafb;
+  border: none;
   font-weight: 600;
-  color: var(--color-text);
+  color: #111827;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
 }
 
 .option:hover {
@@ -47,16 +51,18 @@
   padding: 14px 20px;
   text-align: left;
   border-radius: var(--radius-button);
-  background: #dbeafe;
-  border: 3px solid var(--color-header);
+  background: linear-gradient(145deg, #fbbf24 0%, #facc15 100%);
+  border: none;
   font-weight: 600;
-  color: var(--color-text);
+  color: #111827;
+  box-shadow: 0 10px 26px rgba(180, 83, 9, 0.35);
 }
 
 .neutral {
   margin: 0 0 20px;
   font-size: 0.95rem;
-  color: var(--color-text-muted);
+  color: rgba(226, 232, 240, 0.9);
+  text-align: center;
 }
 
 .button {
@@ -66,10 +72,11 @@
   margin: 0 auto;
   padding: 12px 22px;
   border-radius: 999px;
-  background: linear-gradient(145deg, #6366f1 0%, #4f46e5 100%);
-  color: white;
+  background: #f9fafb;
+  color: #111827;
   font-weight: 700;
   font-size: 1rem;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
 }
 
 .button:hover:not(:disabled) {
